@@ -6,7 +6,7 @@
 /*   By: mulzega <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/28 11:05:32 by mulzega           #+#    #+#             */
-/*   Updated: 2017/04/01 15:26:43 by mulzega          ###   ########.fr       */
+/*   Updated: 2017/04/12 14:51:58 by mulzega          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ int		ft_xmax(char *temp)
 	{
 		while (temp[i] == 32)
 			i++;
+		if (ft_isalpha(temp[i]) == 1)
+			ft_error(3);
 		if (temp[i] != 32 && temp[i])
 		{
 			j++;
@@ -38,7 +40,6 @@ void	ft_parse(t_env *e, int fd)
 	char	*temp;
 
 	YMAX = 0;
-	TMP = NULL;
 	while (get_next_line(fd, &temp))
 	{
 		if (!(TMP) && (XMAX = ft_xmax(temp)))
@@ -46,14 +47,13 @@ void	ft_parse(t_env *e, int fd)
 		else
 			TMP = ft_strjoinfree(TMP, temp);
 		if (XMAX != ft_xmax(temp))
-		{
-			ft_putstr("map file error\n");
-			exit(0);
-		}
+			ft_error(3);
 		TMP = ft_strjoinfree(TMP, "\n");
 		free(LINE);
 		YMAX++;
 	}
+	if (YMAX == 0)
+		ft_error(3);
 	TMP = ft_strjoinfree(TMP, "\0");
 	Z = ft_split_whitespaces(TMP);
 	LINE = ft_strsplit(TMP, '\n');
@@ -74,13 +74,10 @@ int		main(int ac, char **av)
 		if (fd > 0)
 			ft_parse(&e, fd);
 		else
-		{
-			ft_putstr("map file doesn't exist\n");
-			exit (0);
-		}
+			ft_error(1);
 		ft_fdf(&e);
 	}
 	if (ac < 2 || ac > 2)
-		ft_putstr("usage : ./fdf [map_file]\n");
+		ft_error(2);
 	return (0);
 }

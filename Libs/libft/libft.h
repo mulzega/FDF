@@ -6,7 +6,7 @@
 /*   By: mulzega <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/07 18:02:29 by mulzega           #+#    #+#             */
-/*   Updated: 2017/03/27 11:33:10 by mulzega          ###   ########.fr       */
+/*   Updated: 2017/04/07 18:10:34 by mulzega          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,10 +29,10 @@ typedef enum		e_bool {
 	TRUE = 1
 }					t_bool;
 
-char   	 			**ft_split_whitespaces(char *str);
+char				**ft_split_whitespaces(char *str);
 int					get_next_line(const int fd, char **line);
 size_t				ft_strlen(const char *str);
-int 				ft_htoi(char *s);
+int					ft_htoi(char *s);
 char				*ft_strjoinfree(char const *s1, char const *s2);
 char				*ft_convert_base(char *nbr, char *base_from, char *base_to);
 char				*ft_strdup(const char *str);
@@ -55,7 +55,7 @@ int					ft_isalnum(int c);
 int					ft_isascii(int c);
 int					ft_isprint(int c);
 int					ft_isupper(int c);
-double            	ft_atof(const char *str);
+double				ft_atof(const char *str);
 int					ft_toupper(int c);
 int					ft_tolower(int c);
 char				*ft_strnew(size_t size);

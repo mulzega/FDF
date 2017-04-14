@@ -6,7 +6,7 @@
 /*   By: mulzega <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/28 11:05:41 by mulzega           #+#    #+#             */
-/*   Updated: 2017/04/01 14:53:14 by mulzega          ###   ########.fr       */
+/*   Updated: 2017/04/07 14:01:33 by mulzega          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,6 +109,8 @@ void	ft_coord(t_env *e, int y, int x, int w)
 		DX = abs(X2 - X1);
 		ft_line(e);
 	}
+	if (YMAX == 1 && XMAX == 1)
+		mlx_pixel_put(MLX, WIN, 750, 750, ft_atoi(COLOR));
 }
 
 void	ft_draw(t_env *e)

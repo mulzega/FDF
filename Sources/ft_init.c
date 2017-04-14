@@ -31,9 +31,9 @@ int		ft_message(t_env *e)
 int		ft_key_hook2(int keycode, t_env *e)
 {
 	if (keycode == 1)
-		ZZ = ZZ + 0.5;
+		ZZ = ZZ + 0.2;
 	if (keycode == 0)
-		ZZ = ZZ - 0.5;
+		ZZ = ZZ - 0.2;
 	if (keycode == 36)
 		ft_fdf(e);
 	if (keycode == 82)
@@ -60,15 +60,15 @@ int		ft_key_hook2(int keycode, t_env *e)
 int		ft_key_hook(int keycode, t_env *e)
 {
 	if (keycode == 53)
-		exit(0);
+		ft_error(4);
 	if (keycode == 7)
 		ZMAX = ZMAX + 5;
 	if (keycode == 6 && ZMAX > 5)
 		ZMAX = ZMAX - 5;
-	if (keycode == 12 && ZOOM > 3)
-		ZOOM = ZOOM - 3;
+	if (keycode == 12 && ZOOM > 1)
+		ZOOM = ZOOM - 1;
 	if (keycode == 13)
-		ZOOM = ZOOM + 3;
+		ZOOM = ZOOM + 1;
 	if (keycode == 124)
 		PADG = PADG + 50;
 	if (keycode == 123)
@@ -89,7 +89,7 @@ int		ft_key_hook(int keycode, t_env *e)
 int		ft_mouse_hook(int mousecode)
 {
 	if (mousecode == 2)
-		exit(0);
+		ft_error(5);
 	return (0);
 }
 
@@ -110,7 +110,7 @@ int		ft_fdf(t_env *e)
 	ft_get_zmax(e);
 	ft_draw(e);
 	ft_message(e);
-	mlx_key_hook(WIN, ft_key_hook, e);
+	mlx_hook(WIN, 2, KeyPressMask, ft_key_hook, e);
 	mlx_mouse_hook(WIN, ft_mouse_hook, e);
 	mlx_loop(MLX);
 	return (0);

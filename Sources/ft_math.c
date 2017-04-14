@@ -6,7 +6,7 @@
 /*   By: mulzega <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/29 16:04:51 by mulzega           #+#    #+#             */
-/*   Updated: 2017/04/01 14:55:23 by mulzega          ###   ########.fr       */
+/*   Updated: 2017/04/14 13:24:57 by mulzega          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,4 +25,17 @@ void	ft_get_zmax(t_env *e)
 			ZMIN = ft_atoi(Z[i]) - 2;
 		i++;
 	}
+}
+
+void	ft_error(int i)
+{
+	if (i == 1)
+		ft_putstr("map file doesn't exist\n");
+	if (i == 2)
+		ft_putstr("usage : ./fdf [map_file]\n");
+	if (i == 3)
+		ft_putstr("map file error\n");
+	else
+		exit(0);
+	exit(0);
 }

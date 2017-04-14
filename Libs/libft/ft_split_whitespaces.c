@@ -6,17 +6,17 @@
 /*   By: mulzega <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/22 13:03:22 by mulzega           #+#    #+#             */
-/*   Updated: 2017/03/22 13:03:39 by mulzega          ###   ########.fr       */
+/*   Updated: 2017/04/07 18:07:34 by mulzega          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-int        ft_nb_words(char *str)
+int		ft_nb_words(char *str)
 {
-	int i;
-	int sym;
-	int count;
+	int		i;
+	int		sym;
+	int		count;
 
 	i = 0;
 	sym = 0;
@@ -40,9 +40,9 @@ int        ft_nb_words(char *str)
 	return (count);
 }
 
-int        ft_ln_w(char *str, int i)
+int		ft_ln_w(char *str, int i)
 {
-	int count;
+	int		count;
 
 	count = 0;
 	while (str[i] != '\t' && str[i] != ' ' && str[i] != '\n' && str[i])
@@ -53,12 +53,12 @@ int        ft_ln_w(char *str, int i)
 	return (count);
 }
 
-char    **ft_split_whitespaces(char *str)
+char	**ft_split_whitespaces(char *str)
 {
-	char    **res;
-	int        i;
-	int        j;
-	int        k;
+	char	**res;
+	int		i;
+	int		j;
+	int		k;
 
 	i = 0;
 	j = 0;

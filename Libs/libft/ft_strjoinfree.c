@@ -6,15 +6,16 @@
 /*   By: mulzega <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/27 11:05:20 by mulzega           #+#    #+#             */
-/*   Updated: 2017/03/27 11:05:30 by mulzega          ###   ########.fr       */
+/*   Updated: 2017/04/07 18:06:23 by mulzega          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdio.h>
-char    *ft_strjoinfree(char const *s1, char const *s2)
+
+char	*ft_strjoinfree(char const *s1, char const *s2)
 {
-	char    *new;
+	char	*new;
 
 	if (!(new = ft_strnew(ft_strlen(s1) + ft_strlen(s2))))
 		return (NULL);

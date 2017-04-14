@@ -6,7 +6,7 @@
 /*   By: mulzega <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/28 10:07:59 by mulzega           #+#    #+#             */
-/*   Updated: 2017/04/01 15:05:20 by mulzega          ###   ########.fr       */
+/*   Updated: 2017/04/14 13:23:41 by mulzega          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,12 @@
 
 # include <mlx.h>
 # include <math.h>
-# include "stdio.h"
-# include "unistd.h"
-# include "stdlib.h"
+# include <stdio.h>
+# include <fcntl.h>
+# include <unistd.h>
+# include <stdlib.h>
 # include "../Libs/libft/libft.h"
+# include </System/Library/Frameworks/Tk.framework/Versions/8.5/Headers/X11/X.h>
 
 # define MLX e->mlx
 # define WIN e->win
@@ -86,6 +88,7 @@ void			ft_parse(t_env *e, int fd);
 int				main(int ac, char **av);
 void			ft_get_zmax(t_env *e);
 void			ft_free(t_env *e);
+void			ft_error(int i);
 int				ft_fdf(t_env *e);
 void			ft_draw(t_env *e);
 
